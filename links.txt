@@ -1,0 +1,29 @@
+https://embeddedinventor.com/guide-to-configure-doxygen-to-document-c-source-code-for-beginners/
+https://vicrucann.github.io/tutorials/quick-cmake-doxygen/
+
+Installation on a fresh machine :
+
+apt install doxygen, python3-sphinx
+
+optionally, the RTD theme : pip install sphinx_rtd_theme
+
+pip install breathe==4.13.0 => breathe is a bridge between doxygen and sphinx. I've used 4.13.0 version
+
+Make sure the add sphinx related command to path.
+
+
+1. Create source files + CMakeLists, etc.
+
+2. mkdir docs => cd docs => doxygen -g (to make the Doxyfile)
+
+3. Inside the generate Doxyfile, find the INPUT variable and point it to INPUT = ../src (or your source file location)
+3b. You might want to install sudo apt install graphviz to make dot dependency happy.
+
+
+cd docs/
+sphinx-quickstart (only once)
+make html
+
+mkdir api (or whatever) to have subfolders.
+
+Limitations : cannot directly link to source files. 
